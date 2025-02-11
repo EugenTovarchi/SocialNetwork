@@ -37,7 +37,6 @@ public class AddFriendView
             friendService.AddFriend(addingFriendData);
 
             SuccessMessage.Show($"Пользователь успешно добавлен в друзья!");
-            user = userService.FindById(user.Id);
         }
 
         catch (UserNotFoundException)
@@ -48,6 +47,11 @@ public class AddFriendView
         catch (UserAlreadyExistException)
         {
             AlertMessage.Show("Пользователь уже у вас в друзьях!");
+        }
+
+        catch (SelfFriendshipException ex)
+        {
+            AlertMessage.Show(ex.Message);
         }
 
         catch (ArgumentNullException)

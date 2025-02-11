@@ -52,6 +52,7 @@ public class UserMenuView
                 case "3":
                     {
                         Program.addFriendView.Show(user);
+                        user = userService.FindById(user.Id);
                         break;
                     }
                 case "4":

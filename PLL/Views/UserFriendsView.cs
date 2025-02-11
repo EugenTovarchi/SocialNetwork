@@ -12,8 +12,6 @@ public class UserFriendsView
 {
     public void Show(IEnumerable<Friend> userFriends)
     {
-        Console.WriteLine("Ваши друзья");
-
         if (userFriends.Count() == 0)
         {
             NeutralMessage.Show("У вас еще нет друзей. Не печальтесь!");
